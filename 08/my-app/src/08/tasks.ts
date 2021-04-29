@@ -1,5 +1,5 @@
 export function sum(...numbers: Array<number>){
-    return numbers.reduce((acc, item) => acc + item)
+    return numbers.reduce((acc, item) => acc + item )
 }
 
 export function checkType(a: any, b: any, ...items: Array<number>){
@@ -42,10 +42,10 @@ export function getSum(num: number) {
     return String(num)
         .split('')
         .map(Number)
-        .reduce((sum, eachNumber) => sum + eachNumber ,0)
+        .reduce((sum, eachNumber) => sum + eachNumber, 1 )
 }
 
 export function getBanknotesList(num: number): Array<number> {
     num % 10
-    return [1 ]
+    return [num]
 }

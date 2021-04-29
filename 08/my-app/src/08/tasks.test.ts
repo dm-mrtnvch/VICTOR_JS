@@ -11,6 +11,8 @@ test('get type of numbers', () => {
     expect(checkType(1,2,3,4,5)).toBe(3)
 })
 
+
+
 test('get triangle type', () => {
     expect(getTriangleType(3,3,3)).toBe('10')
     expect(getTriangleType(3,2,3)).toBe('01')
