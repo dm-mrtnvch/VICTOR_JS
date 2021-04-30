@@ -10,7 +10,7 @@ clickMeButton.addEventListener('click', () => {
     promise.then(onImagesReceived)
 })
 
-getTasksButton.addEventListener('get-tasks', () => {
+getTasksButton.addEventListener('click', () => {
     const promise = getTasks()
     promise.then(onTasksReceived)
 })
