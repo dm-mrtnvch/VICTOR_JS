@@ -88,4 +88,169 @@
 // console.log(array);
 
 
-// f
+// // Task5
+// function Monster(){}
+// Monster.prototype.growl = () => console.log('grrr!')
+// console.log(new Monster().growl() === new Monster().growl());
+//
+//
+// // Task 6
+// let first = 'Who'
+// let second = 'What'
+// try {
+//     try {
+//         throw new Error('Sad trombone')
+//     } catch (err) {
+//         first = 'Why'
+//         throw err
+//     } finally {
+//         second = 'When'
+//     }
+// } catch (err) {
+//     second = 'Where'
+// }
+//
+// console.log(first);
+// console.log(second);
+
+// Task 7
+// setTimeout(() => console.log(1), 0)
+// console.log(2)
+// new Promise((resolve, reject) => {
+//     setTimeout(() => reject(console.log(3), 1000))
+// }).catch(() => console.log(4))
+// console.log(5);
+//
+// // 2 5 1 3 4
+
+// // Task 8
+// let date = new Date(2020, 5, 10)
+// let dateDisplayOptions = {
+//     year: 'numeric',
+//     month: 'long',
+//     day: 'numeric'
+// }
+//
+// const formattedDate = date.toLocaleDateString('en', dateDisplayOptions)
+// console.log(formattedDate);
+
+
+// // Task 9
+// let objBook = {title: 'JavaScript'}
+// Object.preventExtensions(objBook)
+// let newObjBook = objBook
+// newObjBook.author = 'Robert'
+//
+// console.log(objBook);
+// console.log(newObjBook);
+
+
+// // Task 10
+// function getAvailabilityMessage(item) {
+//     if(getAvailability(item)){
+//         var msg = 'Username available'
+//     }
+//     return msg
+// }
+//
+// function getAvailability(name){
+//     return name === 'Eugene'
+// }
+//
+// console.log('getAvailabilityMessage', getAvailabilityMessage('newUserName'));
+
+// // Task 11
+// const entries = []
+// entries.push('a')
+// entries.push('b', 'c')
+// console.log(entries.pop());
+
+//
+// // Task 12
+// const entries = ['a', 1, true]
+// console.log(entries instanceof Array);f
+
+// // Task 13
+// //НЕ РЕШАЛИ
+// const priority = new Set(['High', 'Low'])
+// function logSetElements(key, value, set) {
+//     console.log(`s[${key}] = ${value}`);
+// }
+// priority.forEach(logSetElements)
+
+// // Task 14
+// const ids = new Set([1, '1'])
+// console.log(ids.size);
+
+// // Task 15
+// const entries = ['a', 'b', 'c']
+// entries.length = 10
+// console.log(entries.length);
+// console.log(entries);
+
+// // Task 16
+// const priority = [1, 2, 3]
+// const priority100 = Array.from(
+//     priority,
+//     function (p){
+//         return p * 10 + this.adjustment
+//     },
+//     {adjustment: 100}
+// )
+//
+// console.log(priority100);
+
+
+// // // Task 17
+// // НЕ РЕШАЛИ
+// const ratings = [1, 2, 3, 4, 5];
+// const result = ratings.reduce((start, next, index, array) =>
+//     start + next);
+// console.log(result);
+
+
+// // Task 18
+// const priority = [, ,];
+// for (const item of priority) {
+//     console.log(item);
+// }
+
+// // Task 19
+// const entries = ['a', 'b', 'c']
+// const newEntries = entries.concat(['d', 'e', 'f'], 'g', 'h')
+// console.log(newEntries.length);
+
+// // Task 20
+// const priority = ['Low', 'Normal', 'High']
+// const [low, ...remaining] = priority
+// console.log(remaining);
+
+// // Task 21
+// let task = {isDone: false}
+// console.log(Object.prototype.isPrototypeOf(task));
+//
+// // Task 22
+// let task1 = {id: 1}
+// let task2 = {id: 2, priority: 100}
+// let target = {}
+// Object.assign(target, task1, task2)
+// console.log(target);
+
+// // Task 23
+// 'use strict'
+// let task = {id: 1}
+// Object.freeze(task)
+// task.id = 2
+// task.action = 'Create'
+// Object.defineProperty(task, 'priority', {value: 'High'})
+// console.log(task);
+
+// // Task 24
+// let task = {
+//     isDone: true,
+//     estHours: 16
+// }
+// let anotherTask = task
+// console.log(anotherTask.isDone);
+
+// Task 25
