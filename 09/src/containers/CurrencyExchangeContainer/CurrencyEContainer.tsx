@@ -53,7 +53,7 @@ import {
 // } = props;
 
 
-const CurrencyEContainer: React.FC = () => {
+export const CurrencyEContainer: React.FC = () => {
     const dispatch = useDispatch()
 
     // const currencies = useSelector(selectCurrencies)

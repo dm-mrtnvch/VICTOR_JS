@@ -1,4 +1,4 @@
-import { combineReducers, createStore } from "redux";
+ import { combineReducers, createStore } from "redux";
 import { currencyReducer } from './currencyReducer';
 
 const reducers = combineReducers({
