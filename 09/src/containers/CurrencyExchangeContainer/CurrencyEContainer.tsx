@@ -11,11 +11,11 @@ import {
 import {connect, ConnectedProps, useDispatch, useSelector} from 'react-redux';
 import {
     selectAllStateValues,
-    selectAmountOfBYN,
-    selectAmountOfCurrency,
-    selectCurrencies,
-    selectCurrentCurrency,
-    selectIsBuying
+    // selectAmountOfBYN,
+    // selectAmountOfCurrency,
+    // selectCurrencies,
+    // selectCurrentCurrency,
+    // selectIsBuying
 } from '../../redux/selectors';
 
 // const CurrencyEContainer: React.FC<TProps> = props => {

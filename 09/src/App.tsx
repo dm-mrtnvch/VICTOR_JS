@@ -16,7 +16,8 @@ import CurrencyEContainer from './containers/CurrencyExchangeContainer/CurrencyE
 function App() {
     return (
         <div className="container">
-            <CurrencyEContainer/>
+            {/*<CurrencyEContainer/>*/}
+            <Lesson3/>
         </div>
     );
 }
