@@ -1,6 +1,7 @@
 import {log} from 'util';
+import API from './API';
 
-console.log('lesson 3');
+// console.log('lesson 3');
 
 // Event loop
 // https://learn.javascript.ru/event-loop
@@ -18,40 +19,38 @@ console.log('lesson 3');
 // https://habr.com/ru/company/oleg-bunin/blog/417461/?_ga=2.54695343.543933152.1602500664-1040035071.1596811661
 
 
-let a = 10
+// let a = 10
+//
+// let prom = new Promise((resolve, reject) => {
+//     // some code
+//     let b = 10
+//     // some code
+//     setTimeout(() => {}, 0)// some async request
+//     resolve('oneArg') // success response
+//     reject('oneArg') // unsuccess response
+// })
+//
+//
+// let c = 10
+// //..
 
-let prom = new Promise((resolve, reject) => {
-    // some code
-    let b = 10
-    // some code
-    setTimeout(() => {}, 0)// some async request
-    resolve('oneArg') // success response
-    reject('oneArg') // unsuccess response
-})
+console.log('start')
 
+async function f() {
+    try {
+        const a = 10
+        console.log('raz', a)
+        const response = await API.searchFilmsByTitle('bla')
+        const b = response.data
+        console.log('dva', a)
+    } catch (err) {
+        console.log(err)
+    }
+}
 
-let c = 10
-//..
+f()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log('end')
 
 
 // let prom = new Promise((resolve, reject) => {
