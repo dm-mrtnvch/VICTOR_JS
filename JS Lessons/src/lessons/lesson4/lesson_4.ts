@@ -43,22 +43,42 @@ console.log('lesson 4');
 // 2 5 3 1
 
 // task 4
-
-function f(num: number){
-    console.log(num)
-}
-Promise.resolve(1)
-    .then(f)
-    (function (){
-        console.log(2)
-    })()
-console.log(3)
-new Promise((res, rej) => {
-    console.log(4)
-})
-setTimeout(f, 0, 5)
-
+// function f(num: number){
+//     console.log(num)
+// }
+// Promise.resolve(1)
+//     .then(f);
+//     (function (){
+//         console.log(2)
+//     })()
+// console.log(3)
+// new Promise((res, rej) => {
+//     console.log(4)
+// })
+// setTimeout(f, 0, 5)
 // 2 3 4 1 5
+
+
+// task 5
+// console.log(1)
+// function f() {
+//     console.log(2)
+// }
+// setTimeout(() => {
+//     console.log(3)
+//     let p = new Promise((resolve, reject) => {
+//         console.log(4)
+//         resolve()
+//     });
+//     p.then(() => f())
+// }, 0)
+// let l = new Promise((resolve, reject) => {
+//     console.log(5)
+//     reject()
+// })
+// l.then(res => console.log(res)).catch(() => console.log(6))
+// console.log(7)
+// 1 5 7 6 3 4 2
 
 
 // Task 01
@@ -97,6 +117,168 @@ setTimeout(f, 0, 5)
 // описаного выше объекта: свойство promise получает новый созданный промис,
 // свойства resolve и reject получают ссылки на соответствующие функции
 // resolve и reject. Следующие два обработчика запускают методы resolve и reject.
+
+
+// async function sleep(ms: number){
+//     setTimeout(() => {
+//         console.log(ms)
+//     }, ms * 100)
+// }
+//
+// async function sleep(ms: number) {
+//     return new Promise((resolve) => {
+//         setTimeout(() => {
+//             console.log(ms)
+//             resolve()
+//         }, ms * 100)
+//     })
+// }
+//
+// async function show() {
+//     await sleep(3)
+//     await sleep(2)
+//     await sleep(1)
+//     console.log(5)
+// }
+//
+// show()
+//
+// console.log(4)
+
+
+// task 8
+let pr1 = new Promise(resolve => {
+    resolve(10)
+})
+
+let pr2 = new Promise(resolve => {
+    resolve(0)
+})
+pr1
+    .then((res: any) => {
+        console.log(res)
+        return res + 2
+    })
+    .then((res: any) => {
+        console.log(res)
+        return res + 2
+    })
+    .then(console.log)
+pr2
+    .then((res: any) => {
+        console.log(res)
+        return res + 1
+    })
+    .then((res: any) => {
+        console.log(res)
+        return res + 1
+    })
+    .then(console.log)
+
+// 10 12 14 0 1 2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+type TestObjType = {
+    promise: null | Promise<any>
+    resolve: null | Function
+    reject: null | Function
+    onSuccess: (paramName: string) => void
+    onError: (paramName: string) => void
+}
+
+
+const handlePromise: TestObjType = {
+    promise: null,
+    resolve: null,
+    reject: null,
+    onSuccess: (paramName: string) => {
+        console.log(`Promise is resolved with data: ${paramName}`)
+    },
+    onError: (paramName: string) => {
+        console.log(`Promise is rejected with error: ${paramName}`)
+    }
+}
+
+export const createPromise = () => {
+    const somePromise: Promise<any> = new Promise((resolve, reject) => {
+        handlePromise.resolve = resolve
+        handlePromise.reject = reject
+    })
+    handlePromise.promise = somePromise
+    handlePromise.promise
+        .then(res => handlePromise.onSuccess(res))
+        .catch(handlePromise.onError)
+    console.log(handlePromise)
+}
+
+export const resolvePromise = () => {
+    handlePromise.resolve && handlePromise.resolve('1')
+}
+
+export const rejectPromise = () => {
+    handlePromise.reject && handlePromise.reject('0')
+}
+
+
+//@ts-ignore
+window.prom = handlePromise
+
+// type TestObjType = {
+//     promise: null | Promise<any>
+//     resolve: null | Function
+//     reject: null | Function
+//     onSuccess: (paramName: string) => void
+//     onError: (paramName: string) => void
+// }
+//
+//
+// export const handlePromise: TestObjType = {
+//     promise: null,
+//     resolve: null,
+//     reject: null,
+//     onSuccess: (paramName: any) => {
+//         console.log(`Promise is resolved with data: ${paramName}`)
+//     },
+//     onError: (paramName: any) => {
+//         console.log(`Promise is rejected with error: ${paramName}`)
+//     }
+// }
+//
+//
+// export const onCreatePromiseHandler = () => {
+//     const somePromise: Promise<any> = new Promise((resolve, reject) => {
+//         handlePromise.resolve = resolve
+//         handlePromise.reject = reject
+//     })
+//     handlePromise.promise = somePromise
+//     handlePromise.promise
+//         .then(res => res)
+//         .catch(handlePromise.onError)
+//     console.log(handlePromise)
+// }
+//
+// export const onResolvePromiseHandler = () => {
+//     handlePromise.resolve && handlePromise.resolve('1')
+// }
+//
+// export const onRejectPromiseHandler = () => {
+//     handlePromise.reject && handlePromise.reject('0')
+// }
+//
+// //@ts-ignore
+// window.prom = handlePromise
 
 
 // Task 06
