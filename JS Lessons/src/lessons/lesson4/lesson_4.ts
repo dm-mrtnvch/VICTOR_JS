@@ -150,7 +150,6 @@ console.log('lesson 4');
 let pr1 = new Promise(resolve => {
     resolve(10)
 })
-
 let pr2 = new Promise(resolve => {
     resolve(0)
 })
@@ -176,6 +175,7 @@ pr2
     .then(console.log)
 
 // 10 12 14 0 1 2
+// 10 0 12 1 14 2
 
 
 

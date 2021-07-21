@@ -108,3 +108,11 @@ function findNikc(st) {
 
 // const nick = itFind(students, itFind())
 const nick = students.find(st => st.name === 'nick')
+
+promise = {
+    state: "pending",
+    then: (callback) => {
+       this.next = new callback;
+       return {...this, callback};
+    },
+}

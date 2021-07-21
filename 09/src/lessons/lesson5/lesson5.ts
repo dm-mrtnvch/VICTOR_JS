@@ -30,10 +30,152 @@ type someObjType = {
     age: number;
 }
 
-let someObj:someObjType = {
+let someObj: someObjType = {
     name: 'Eugene',
     age: 32
 }
+
+
+//
+// let obj = {name: 'evgen'}
+// let obj2 = {name: 'vlad'}
+//
+// function f(){
+//     console.log('this is function declaration', this)
+// }
+//
+// obj.f = f
+// obj2.f = f
+// f( )
+// obj.f()
+// obj2.f()
+//
+//
+//
+// function f(){
+//     console.log('this is function declaration', this)
+// }
+//
+// let arrow = () => {
+//     console.log('this is arrow function', this)
+// }
+//
+// obj.test = function() {
+//     let arrow = () => console.log('this in arrow function', this)
+//     arrow()
+// }
+//
+// // obj.test()
+//
+// obj2.test = function() {
+//     function testFunc () {
+//         console.log('this in arrow function', this)
+//     }
+//     testFunc()
+// }
+//
+// obj2.test()
+
+// let obj = {name: 'evgen'}
+// let obj2 = {name: 'vlad'}
+//
+// obj.test = function() {
+//     return function() {
+//         console.log('this in function declaration', this)
+//     }
+//     arrow()
+// }
+//
+// obj2.test = obj.test()
+// obj2.test()
+//
+// obj.test = function() {
+//     return () => console.log('this in function declaration', this)
+// }
+//
+// let test = obj.test()
+// test()
+
+
+// let obj = {name: 'evgen'}
+// let obj2 = {name: 'vlad'}
+//
+// setTimeout(function(){
+//     console.log('this in function declaration', this)
+// }, 0)
+// setTimeout(() => {
+//     console.log('this in function declaration', this)
+// }, 0)
+
+
+// let obj = {
+//     name: 'Evgen',
+//     test() {
+//         setTimeout(function(){
+//             console.log('this in function declaration', this)
+//         }, 0)
+//         setTimeout(() => {
+//             console.log('this in function declaration', this)
+//         }, 0)
+//     }
+// }
+//
+// obj.test()
+//
+
+
+//
+// let obj2 = {
+//     name: 'vlad',
+//     f() {return function() {console.log('this in function declaration', this)}},
+//     f2() {return () => console.log('this in arrow function', this)},
+//     a: () => {return function() {console.log('this in function declaration', this)}},
+//     a2: () => {console.log('this in arrow function', this)},
+// }
+//
+// let obj = {
+//     name: 'Evgen',
+//     test() {
+//         setTimeout(obj2.f(), 0)
+//         setTimeout(obj2.f2(), 0)
+//     }
+// }
+//
+// obj.test()
+//
+
+// let obj2 = {
+//     name: 'vlad',
+//     f() {return function() {console.log('this in function declaration', this)}},
+//     f2() {return () => console.log('this in arrow function', this)},
+//     a: () => {return function() {console.log('this in function declaration', this)}},
+//     a2: () => {console.log('this in arrow function', this)},
+// }
+//
+// let obj = {
+//     name: 'Evgen',
+//     test() {
+//         setTimeout(obj2.a(), 0)
+//         setTimeout(obj2.a2(), 0)
+//     }
+// }
+//
+// obj.test()
+
+
+let obj = {name: 'evgen'}
+let obj2 = {name: 'vlad'}
+
+function sayName() {
+    //@ts-ignore
+    console.log(this.name)
+}
+
+//@ts-ignore
+obj.sayName = sayName
+//@ts-ignore
+obj.sayName()
+
 
 // Task 02
 // реализовать счетчик counter в виде объекта со следующими методами:
@@ -55,7 +197,11 @@ let someObj:someObjType = {
 // Task 05 есть 2 объекта One и Two. С помощью bind и метода sayHello заставьте поздороваться объект One
 
 let One = {name: 'One'};
-let Two = {name: 'Two', sayHello: function() {console.log(`Hello, my name is ${this.name}`)}};
+let Two = {
+    name: 'Two', sayHello: function () {
+        console.log(`Hello, my name is ${this.name}`)
+    }
+};
 
 // Task 06
 // создайте объект helperObj у которого есть следующие методы:
@@ -67,7 +213,9 @@ let Two = {name: 'Two', sayHello: function() {console.log(`Hello, my name is ${t
 // Bind
 // 1) Дана функция sumTwoNumbers, реализовать функцию bindNumber которая принимает функцию sumTwoNumbers и число, и
 // возвращает другую функцию, которое также принимает число и возвращает сумму этих чисел. Замыкание использовать нельзя
-function sumTwoNumbers(a:number,b:number):number {return a + b};
+function sumTwoNumbers(a: number, b: number): number {
+    return a + b
+};
 
 // 2) Напишите функцию которая принимает первым аргументом объект One, а вторым helperObj. Данная функция
 // возвращает другую функцию которая принимает строку в качестве аргумента и устанавливает ее свойству name объекта One
@@ -77,6 +225,6 @@ function sumTwoNumbers(a:number,b:number):number {return a + b};
 // Реализовать задачи 2-4 из Bind с помощью Call
 
 
-
 // just a plug
-export default () => {};
+export default () => {
+};
