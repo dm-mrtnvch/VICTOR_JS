@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import './lessons/lesson5/lesson5'
+import './lessons/lesson6/lesson6'
 import CurrencyEContainer from '../../09/src/containers/CurrencyExchangeContainer/CurrencyEContainer';
 import Lesson3 from './lessons/lesson3/Lesson3';
 import Lesson4 from './lessons/lesson4/Lesson4';

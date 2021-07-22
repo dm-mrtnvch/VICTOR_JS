@@ -7,6 +7,63 @@ console.log('Lesson 6');
 // https://www.youtube.com/watch?v=BASquaxab_w
 // https://www.youtube.com/watch?v=uLY9GXGMXaA
 
+
+console.dir(function (){})
+class Test2 {}
+console.dir(Test)
+//
+
+//@ts-ignore
+function Test(name) {
+    // return 10
+    //@ts-ignore
+    this.name = name
+    return 10
+    // return {test: 'tsfdsd'}
+}
+
+//@ts-ignore
+let result = new Test('evgen')
+console.log(result)
+
+
+
+class Test3 {
+
+    name: string
+    age: number
+    // sayBye: Function
+    // sayHi: () => void // Function
+
+    constructor(name: string, age: number, public city: string) {
+        this.name = name
+        this.age = age
+        this.city = city
+        // this.sayBye = () => {}
+    }
+
+    sayHi() {
+
+    }
+
+    sayBye = () => {
+
+    }
+}
+
+let testObj = new Test3('testObj', 2, 'minsk')
+let testObj2 = new Test3('testObj 2', 4, 'moscow')
+
+
+console.log(testObj)
+console.log(testObj2)
+// console.log(testObj.sayHi === testObj2.sayHi)
+console.log(testObj.sayBye === testObj2.sayBye)
+
+
+
+
+
 // Task 01
 // Создайте структуру с именем student, содержащую поля: имя и фамилия, номер группы, успеваемость (массив из пяти элементов).
 // Создать массив из десяти элементов такого типа, упорядочить записи по возрастанию среднего балла.
