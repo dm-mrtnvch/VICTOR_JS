@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
 import './lessons/lesson6/lesson6'
-import CurrencyEContainer from '../../09/src/containers/CurrencyExchangeContainer/CurrencyEContainer';
-import Lesson3 from './lessons/lesson3/Lesson3';
-import Lesson4 from './lessons/lesson4/Lesson4';
+// import CurrencyEContainer from '../../09/src/containers/CurrencyExchangeContainer/CurrencyEContainer';
+// import Lesson3 from './lessons/lesson3/Lesson3';
+// import Lesson4 from './lessons/lesson4/Lesson4';
 // import Lesson1 from './lessons/lesson1/lesson1';
 // import './lessons/lesson2/lesson2';
 // import Lesson4 from './lessons/lesson4/Lesson4';
@@ -15,7 +15,6 @@ import Lesson4 from './lessons/lesson4/Lesson4';
 function App() {
     return (
         <div className="container">
-
         </div>
     );
 }

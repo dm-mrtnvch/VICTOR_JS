@@ -8,62 +8,128 @@ console.log('Lesson 6');
 // https://www.youtube.com/watch?v=uLY9GXGMXaA
 
 
-console.dir(function (){})
-class Test2 {}
-console.dir(Test)
+// console.dir(function (){})
+// class Test2 {}
+// console.dir(Test)
+// //
+//
+// //@ts-ignore
+// function Test(name) {
+//     // return 10
+//     //@ts-ignore
+//     this.name = name
+//     return 10
+//     // return {test: 'tsfdsd'}
+// }
+//
+// //@ts-ignore
+// let result = new Test('evgen')
+// console.log(result)
+//
+//
+//
+// class Test3 {
+//
+//     name: string
+//     age: number
+//     // sayBye: Function
+//     // sayHi: () => void // Function
+//
+//     constructor(name: string, age: number, public city: string) {
+//         this.name = name
+//         this.age = age
+//         this.city = city
+//         // this.sayBye = () => {}
+//     }
+//
+//     sayHi() {
+//
+//     }
+//
+//     sayBye = () => {
+//
+//     }
+// }
+//
+// let testObj = new Test3('testObj', 2, 'minsk')
+// let testObj2 = new Test3('testObj 2', 4, 'moscow')
+//
+//
+// console.log(testObj)
+// console.log(testObj2)
+// // console.log(testObj.sayHi === testObj2.sayHi)
+// console.log(testObj.sayBye === testObj2.sayBye)
 //
 
-//@ts-ignore
-function Test(name) {
-    // return 10
-    //@ts-ignore
-    this.name = name
-    return 10
-    // return {test: 'tsfdsd'}
+
+// class Test {
+//     constructor(public name: string) {
+//         this.name = name
+//     }
+//
+//     sayHi() {
+//
+//     }
+// }
+//
+// class Test2 extends Test {
+//      constructor(public name: string) {
+//          super(name);
+//      }
+//
+//      sayBye() {
+//          console.log('hi hi')
+//          super.sayHi()
+//      }
+// }
+//
+// let testObj = new Test2('evgen')
+// console.log(testObj)
+
+
+interface ITest {
+    age: number
+    sayBye: Function
 }
 
-//@ts-ignore
-let result = new Test('evgen')
-console.log(result)
-
-
-
-class Test3 {
-
+class Test implements ITest{
     name: string
-    age: number
-    // sayBye: Function
-    // sayHi: () => void // Function
+    staticParam: number
 
-    constructor(name: string, age: number, public city: string) {
+    static staticParam = 10
+
+    constructor(name: string, public age: number) {
         this.name = name
         this.age = age
-        this.city = city
-        // this.sayBye = () => {}
-    }
+        this.staticParam = 500
 
+    }
     sayHi() {
+        console.log('hi from parent')
+        console.log(this.name)
+        console.log(Test.staticParam )
+        console.log(this.staticParam)
+    }
+    sayBye() {
 
     }
-
-    sayBye = () => {
-
+    static TestMethod() {
+        console.log(this.staticParam)
     }
 }
 
-let testObj = new Test3('testObj', 2, 'minsk')
-let testObj2 = new Test3('testObj 2', 4, 'moscow')
+let obj = new Test('raz', 1)
 
+class Test2 extends Test {
+    constructor(public name: string, public age: number) {
+        super(name, age);
+    }
 
-console.log(testObj)
-console.log(testObj2)
-// console.log(testObj.sayHi === testObj2.sayHi)
-console.log(testObj.sayBye === testObj2.sayBye)
+}
 
+console.dir(Test2)
 
-
-
-
+obj.sayHi ()
 // Task 01
 // Создайте структуру с именем student, содержащую поля: имя и фамилия, номер группы, успеваемость (массив из пяти элементов).
 // Создать массив из десяти элементов такого типа, упорядочить записи по возрастанию среднего балла.
